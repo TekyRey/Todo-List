@@ -1,11 +1,8 @@
-/* eslint-disable import/no-unresolved */
-/* eslint-disable no-unused-vars */
 /**
  * @jest-environment jsdom
  */
 
 import TodoList from './src/modules/addTodo.js';
-import LocalStorage from './mocks/LocalStorage.js';
 
 const todolist = new TodoList();
 
@@ -20,7 +17,7 @@ describe('Clear All Completed Tasks', () => {
 
     const { length } = todolist.listArray;
 
-    expect(length).toBe(3);
+    expect(length).toBe(4);
   });
 
   test('Mark Some Tasks as completed and remove them', () => {
@@ -30,7 +27,7 @@ describe('Clear All Completed Tasks', () => {
 
     const { length } = todolist.listArray;
 
-    expect(length).toBe(6);
+    expect(length).toBe(7);
   },
   () => {
     // mark task as Completed
