@@ -4,13 +4,16 @@
 
 import TodoList from './src/modules/addTodo.js';
 
-const todolist = new TodoList();
-
 describe('Clear All Completed Tasks', () => {
+//   beforeEach(() => {
+//     const todolist = new TodoList();
+//   });
+
   const titleOne = 'Task two';
   const titleTwo = 'Task three';
   const titleFour = 'Task Four';
   test('Clear All Completed Tasks', () => {
+    const todolist = new TodoList();
     todolist.addTask(titleOne);
     todolist.addTask(titleTwo);
     todolist.addTask(titleFour);
@@ -21,6 +24,7 @@ describe('Clear All Completed Tasks', () => {
   });
 
   test('Mark Some Tasks as completed and remove them', () => {
+    const todolist = new TodoList();
     todolist.addTask(titleOne);
     todolist.addTask(titleTwo);
     todolist.addTask(titleFour);
@@ -30,6 +34,7 @@ describe('Clear All Completed Tasks', () => {
     expect(length).toBe(7);
   },
   () => {
+    const todolist = new TodoList();
     // mark task as Completed
     todolist.listArray[0].completed = true;
     todolist.listArray[1].completed = true;
@@ -43,17 +48,18 @@ describe('Clear All Completed Tasks', () => {
 // test editing a task description in localStorage using describe
 
 describe('Edit', () => {
+  const todolist2 = new TodoList();
   const title = {
     description: 'test',
     completed: false,
   };
-  todolist.addTask(title);
+  todolist2.addTask(title);
   const index = 0;
   const textInsterted = 'Task';
 
   // edit title
   test('edit a task', () => {
-    todolist.editTask(index, textInsterted);
-    expect(todolist.listArray[index].description).toBe(textInsterted);
+    todolist2.editTask(index, textInsterted);
+    expect(todolist2.listArray[index].description).toBe(textInsterted);
   });
 });
