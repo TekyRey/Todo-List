@@ -54,12 +54,12 @@ describe('Edit', () => {
     completed: false,
   };
   todolist2.addTask(title);
-  const index = 0;
+  const index = 1;
   const textInsterted = 'Task';
 
   // edit title
   test('edit a task', () => {
     todolist2.editTask(index, textInsterted);
-    expect(todolist2.listArray[index].description).toBe(textInsterted);
+    expect(todolist2.listArray[index - 1].description).toBe(textInsterted);
   });
 });
