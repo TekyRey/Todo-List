@@ -5,10 +5,6 @@
 import TodoList from './src/modules/addTodo.js';
 
 describe('Clear All Completed Tasks', () => {
-//   beforeEach(() => {
-//     const todolist = new TodoList();
-//   });
-
   const titleOne = 'Task two';
   const titleTwo = 'Task three';
   const titleFour = 'Task Four';
